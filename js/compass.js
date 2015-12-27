@@ -8,7 +8,7 @@ $(function(){
 
 	// DownCount
 	$('.countdown').downCount({
-        date: '01/16/2015 12:00:00' // mm/dd/yyyy
+        date: '12/30/2015 12:00:00' // mm/dd/yyyy
     });
 
 	// Scroll top
