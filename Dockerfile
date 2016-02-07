@@ -9,21 +9,18 @@ RUN apt-get -y install \
 	python-pip \
 	wget \
 	unzip \
-	ipython \
 	git \
 	openjdk-8-jdk \
 	openjdk-8-jre
-RUN pip install numpy
-RUN pip install nltk ner
+RUN pip install numpy nltk ner flask flask-restful 
 
 WORKDIR /home
 RUN wget -O ner.zip http://nlp.stanford.edu/software/stanford-ner-2015-04-20.zip
 RUN unzip ner.zip
 
 WORKDIR /home
-RUN git clone https://github.com/hay/xml2json
-WORKDIR /home/xml2json
-RUN python setup.py install
+RUN git clone https://github.com/mbartoli/restful-ner
+WORKDIR /home/restful-ner/ner
 
 WORKDIR /home/stanford-ner-2015-04-20
 #RUN nohup java -mx1000m -cp stanford-ner.jar edu.stanford.nlp.ie.NERServer -loadClassifier classifiers/english.muc.7class.distsim.crf.ser.gz -port 8080 -outputFormat inlineXML
