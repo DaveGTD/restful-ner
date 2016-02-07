@@ -8,7 +8,7 @@ docker build -t restful-ner .
 
 Start the docker container and run the API on port 3000:
 ```
-docker run -p 9000:8080 restful-ner 
+docker run -p 3000:8080 restful-ner 
 ```
 
 Example usage:
