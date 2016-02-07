@@ -27,3 +27,10 @@ curl http://localhost:3000/ner -d "data=Pomona College is located in Claremont, 
 }
 
 ```
+
+Note:
+The current implementation requires starting the ner server and flask application manually. You can do this by running the following two commands
+```
+java -mx1000m -cp stanford-ner.jar edu.stanford.nlp.ie.NERServer -loadClassifier classifiers/english.muc.7class.distsim.crf.ser.gz -port 8080 -outputFormat inlineXML &
+python /home/restful-ner/ner/restful-ner.py
+```
