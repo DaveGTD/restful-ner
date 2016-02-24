@@ -1,14 +1,12 @@
 # restful-ner
 RESTful API for named entity recognition. 
 
-Build the docker container:
-```
-docker build -t restful-ner .
-```
-
+ 
+   
+   
 Start the docker container and run the API on port 3000:
 ```
-docker run -p 3000:3000 restful-ner 
+docker run -p 3000:3000 docker pull mbartoli/restful-ner 
 ```
 
 Example usage:
@@ -34,3 +32,6 @@ The current implementation requires starting the ner server and flask applicatio
 java -mx1000m -cp stanford-ner.jar edu.stanford.nlp.ie.NERServer -loadClassifier classifiers/english.muc.7class.distsim.crf.ser.gz -port 8080 -outputFormat inlineXML &
 python /home/restful-ner/ner/restful-ner.py
 ```
+              
+              
+Docker Hub: [mbartoli/restful-ner](https://hub.docker.com/r/mbartoli/restful-ner/)
