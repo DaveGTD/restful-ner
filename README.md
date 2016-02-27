@@ -6,7 +6,7 @@ RESTful API for named entity recognition.
    
 Start the docker container and run the API on port 3000:
 ```
-docker run -p 3000:3000 docker pull mbartoli/restful-ner 
+docker run -p 3000:3000 mbartoli/restful-ner 
 ```
 
 Example usage:
