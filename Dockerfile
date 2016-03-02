@@ -1,4 +1,4 @@
-# Version 1.0.0
+# Version 1.1.0
 FROM ubuntu:15.04
 MAINTAINER Mike Bartoli "michael.bartoli@pomona.edu"
 RUN apt-get update
@@ -21,7 +21,7 @@ RUN unzip ner.zip
 WORKDIR /home
 RUN git clone https://github.com/mbartoli/restful-ner
 WORKDIR /home/restful-ner/ner
+RUN cp start.sh /home/stanford-ner-2015-04-20/start.sh
 
 WORKDIR /home/stanford-ner-2015-04-20
-#RUN nohup java -mx1000m -cp stanford-ner.jar edu.stanford.nlp.ie.NERServer -loadClassifier classifiers/english.muc.7class.distsim.crf.ser.gz -port 8080 -outputFormat inlineXML
-
+CMD ["/bin/bash","-c","chmod +x start.sh && sh start.sh"]
